@@ -40,7 +40,7 @@ function App() {
         </div>
 
         {/* FOOTER - Cartão Escuro Final */}
-        <div className="relative w-full bg-brand-dark rounded-t-[40px] md:rounded-t-[80px] shadow-[0_-20px_50px_rgba(0,0,0,0.3)] -mt-16 overflow-hidden z-50">
+        <div className="relative w-full bg-brand-dark shadow-[0_-20px_50px_rgba(0,0,0,0.3)] -mt-16 overflow-hidden z-50">
           <Footer />
         </div>
 
