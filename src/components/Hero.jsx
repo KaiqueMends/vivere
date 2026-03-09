@@ -1,33 +1,59 @@
 export default function Hero() {
   return (
-    <section id="sobre" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      <div className="absolute top-20 left-10 w-64 h-64 bg-brand-light rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-          <div className="mb-12 lg:mb-0 text-center lg:text-left z-10">
-            <span className="inline-block py-1 px-3 rounded-full bg-brand-light/50 text-brand-dark font-bold text-sm mb-4 border border-brand-light">
-              <i className="fa-solid fa-paw mr-2"></i>Pet Care & SPA
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark leading-tight mb-6">
-              Cuidar hoje para viver melhor <span className="text-brand-accent">amanhã</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Olhar veterinário em cada momento. Proporcionamos saúde, estética e bem-estar em um ambiente preparado para o conforto do seu melhor amigo.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#agendar" className="bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-accent transition shadow-xl flex items-center justify-center gap-2">
-                Falar no WhatsApp <i className="fa-brands fa-whatsapp text-xl"></i>
-              </a>
-            </div>
-          </div>
+    <section
+      id="sobre"
+      // CORREÇÃO: Adicionado pt-28 para afastar o conteúdo do menu e min-h-[700px] para garantir espaço
+      className="relative w-full h-screen min-h-[700px] bg-brand-dark flex flex-col items-center justify-center overflow-hidden pt-28 pb-16"
+    >
+      {/* 1. TEXTO GIGANTE DE FUNDO */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center z-0 pointer-events-none select-none">
+        <h1 className="text-[22vw] md:text-[16vw] font-black text-brand-light/10 leading-none tracking-tighter">
+          Vivere
+        </h1>
+      </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-             <div className="relative w-full aspect-square bg-brand-light rounded-[40%_60%_70%_30%/40%_50%_60%_50%] p-2 shadow-2xl overflow-hidden flex items-center justify-center border-4 border-white transition-all duration-700 hover:rounded-[60%_40%_30%_70%/60%_30%_70%_40%]">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cachorro feliz" className="w-full h-full object-cover opacity-90 mix-blend-overlay" />
-            </div>
-          </div>
+      {/* 2. TEXTO PRINCIPAL E IMAGEM CENTRAL */}
+      {/* CORREÇÃO: Removido o margin-top excessivo que estava empurrando o layout */}
+      <div className="z-10 relative w-full flex flex-col items-center px-4 h-full justify-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-8 text-center tracking-tight drop-shadow-lg">
+          Cuidar hoje para <br className="hidden md:block" /> viver melhor amanhã.
+        </h2>
+
+        {/* IMAGEM CENTRAL */}
+        {/* CORREÇÃO: Tamanho máximo ajustado (max-w-xs no mobile, max-w-lg no desktop) para não quebrar a tela */}
+        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl transform hover:scale-105 transition-transform duration-700 ease-out mt-auto mb-auto">
+          {/* Brilho atrás da imagem */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-brand-light rounded-full mix-blend-overlay filter blur-[80px] opacity-30"></div>
+
+          <img
+            src="./dog.png"
+            alt="Mascote Vivere"
+            className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
+            draggable="false"
+          />
         </div>
+      </div>
+
+      {/* 3. MICRORITMOS / METADADOS */}
+      <div className="absolute bottom-6 left-4 md:bottom-12 md:left-12 flex flex-col z-20">
+        <span className="text-brand-light text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-1">
+          Pet Care & SPA
+        </span>
+        <span className="text-white/70 font-medium text-xs md:text-sm">
+          Feira de Santana, BA
+        </span>
+      </div>
+
+      <div className="absolute bottom-6 right-4 md:bottom-12 md:right-12 flex gap-4 md:gap-8 z-20">
+        <a
+          href="#agendar"
+          className="group flex items-center gap-2 text-white font-bold text-xs md:text-sm tracking-widest uppercase transition-all"
+        >
+          <span className="bg-brand-light text-brand-dark w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+            <i className="fa-brands fa-whatsapp md:text-lg"></i>
+          </span>
+          <span className="group-hover:text-brand-light transition-colors hidden sm:block">Agendar</span>
+        </a>
       </div>
     </section>
   );
