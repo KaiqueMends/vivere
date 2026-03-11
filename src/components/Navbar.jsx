@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 
+const phoneNumber = "5575982523752"; 
+const message = "Olá! Estava no site da Vivere e gostaria de agendar um horário para o meu pet.";
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   // 1. Novo estado para controlar o menu mobile aberto/fechado
@@ -52,7 +56,7 @@ export default function Navbar() {
             <a href="#localizacao" className={`font-semibold transition-colors duration-300 ${isScrolled ? 'text-gray-600 hover:text-brand-dark' : 'text-white/80 hover:text-white'
               }`}>Localização</a>
 
-            <a href="#agendar" className={`px-6 py-2.5 rounded-full font-bold transition-all shadow-lg transform hover:-translate-y-0.5 ${isScrolled
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={`px-6 py-2.5 rounded-full font-bold transition-all shadow-lg transform hover:-translate-y-0.5 ${isScrolled
                 ? 'bg-brand-dark text-brand-light hover:bg-brand-accent hover:shadow-xl'
                 : 'bg-white text-brand-dark hover:bg-brand-light hover:shadow-white/20'
               }`}>
@@ -104,7 +108,9 @@ export default function Navbar() {
             Localização
           </a>
           <a
-            href="#agendar"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
             className="mt-4 bg-brand-dark text-brand-light px-8 py-3 rounded-full font-bold shadow-lg w-full text-center"
           >

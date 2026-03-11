@@ -1,3 +1,7 @@
+const phoneNumber = "5575982523752"; 
+const message = "Olá! Estava no site da Vivere e gostaria de agendar um horário para o meu pet.";
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
 export default function Hero() {
   return (
     <section
@@ -46,13 +50,15 @@ export default function Hero() {
 
       <div className="absolute bottom-6 right-4 md:bottom-12 md:right-12 flex gap-4 md:gap-8 z-20">
         <a
-          href="#agendar"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center gap-2 text-white font-bold text-xs md:text-sm tracking-widest uppercase transition-all"
         >
           <span className="bg-brand-light text-brand-dark w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
             <i className="fa-brands fa-whatsapp md:text-lg"></i>
           </span>
-          <span className="group-hover:text-brand-light transition-colors hidden sm:block">Agendar</span>
+          <span  className="group-hover:text-brand-light transition-colors hidden sm:block">Agendar</span>
         </a>
       </div>
     </section>
