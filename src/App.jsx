@@ -4,7 +4,9 @@ import Services from './components/Services'
 import Gallery from './components/Gallery'
 import Testimonials from './components/Testimonials'
 import Location from './components/Location'
+import FAQ from './components/FAQ'
 import Footer from './components/Footer'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 
 function App() {
   return (
@@ -39,12 +41,18 @@ function App() {
           <Location />
         </div>
 
+        {/* FAQ - Cartão Branco */}
+        <div className="relative w-full bg-white rounded-t-[40px] md:rounded-t-[80px] shadow-[0_-20px_50px_rgba(0,0,0,0.05)] -mt-16 overflow-hidden pb-12 pt-8 z-50">
+          <FAQ />
+        </div>
+
         {/* FOOTER - Cartão Escuro Final */}
         <div className="relative w-full bg-brand-dark shadow-[0_-20px_50px_rgba(0,0,0,0.3)] -mt-16 overflow-hidden z-50">
           <Footer />
         </div>
 
       </main>
+      <FloatingWhatsApp />
     </div>
   )
 }
